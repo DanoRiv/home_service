@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface CategoryServicePort {
     void saveCategory(CategoryModel category);
-    List<CategoryModel> GetCategories();
+    List<CategoryModel> getCategories();
 }
