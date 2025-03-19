@@ -22,7 +22,7 @@ public class CategoryPersistenceAdapter implements CategoryPersistencePort {
     }
 
     @Override
-    public List<CategoryModel> GetCategories() {
+    public List<CategoryModel> getCategories() {
         return categoryEntityMapper.toModelList(categoryRepository.findAll());
     }
 
