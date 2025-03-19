@@ -20,15 +20,21 @@ public class CategoryUseCase implements CategoryServicePort {
 
     @Override
     public void saveCategory(CategoryModel category) {
-        if(category.getName().isBlank()) throw new EmptyFieldException(DomainConstants.FIELD_NAME_NULL_MESSAGE);
-        if(category.getDescription().isBlank()) throw new EmptyFieldException(DomainConstants.FIELD_DESCRIPTION_NULL_MESSAGE);
+        if(category.getName().isBlank()) {
+            throw new EmptyFieldException(DomainConstants.FIELD_NAME_NULL_MESSAGE);
+        }
+        if(category.getDescription().isBlank()) {
+            throw new EmptyFieldException(DomainConstants.FIELD_DESCRIPTION_NULL_MESSAGE);
+        }
         CategoryModel existingCategory = categoryPersistencePort.getCategoryByName(category.getName());
-        if(existingCategory != null) throw new DuplicatedEntryException(DomainConstants.DUPLICATED_CATEGORY_EXCEPTION_MESSAGE);
+        if(existingCategory != null) {
+            throw new DuplicatedEntryException(DomainConstants.DUPLICATED_CATEGORY_EXCEPTION_MESSAGE);
+        }
         categoryPersistencePort.saveCategory(category);
     }
 
     @Override
-    public List<CategoryModel> GetCategories() {
-        return categoryPersistencePort.GetCategories();
+    public List<CategoryModel> getCategories() {
+        return categoryPersistencePort.getCategories();
     }
 }

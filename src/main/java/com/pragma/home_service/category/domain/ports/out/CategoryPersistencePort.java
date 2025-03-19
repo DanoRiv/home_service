@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface CategoryPersistencePort {
     void saveCategory(CategoryModel category);
-    List<CategoryModel> GetCategories();
+
+    List<CategoryModel> getCategories();
+
     CategoryModel getCategoryByName(String name);
 }
