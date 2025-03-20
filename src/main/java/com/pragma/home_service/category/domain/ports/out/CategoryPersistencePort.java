@@ -1,13 +1,12 @@
 package com.pragma.home_service.category.domain.ports.out;
 
 import com.pragma.home_service.category.domain.model.CategoryModel;
-
-import java.util.List;
+import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 
 public interface CategoryPersistencePort {
     void saveCategory(CategoryModel category);
 
-    List<CategoryModel> getCategories();
+    PaginatedResult<CategoryModel> getCategories(int page, int size, String sort);
 
     CategoryModel getCategoryByName(String name);
 }

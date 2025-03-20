@@ -6,12 +6,12 @@ import com.pragma.home_service.category.application.dto.response.SaveCategoryRes
 import com.pragma.home_service.category.application.mappers.CategoryDtoMapper;
 import com.pragma.home_service.category.application.services.CategoryService;
 import com.pragma.home_service.category.domain.ports.in.CategoryServicePort;
+import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 import com.pragma.home_service.commons.config.utils.Constants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<CategoryResponse> getCategories() {
-        return categoryDtoMapper.toResponse(categoryServicePort.getCategories());
+    public PaginatedResult<CategoryResponse> getCategories(int page, int size, String sort) {
+       return categoryDtoMapper.toResponsePaginatedList(categoryServicePort.getCategories(page, size, sort));
     }
 }
