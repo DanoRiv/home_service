@@ -1,9 +1,6 @@
 package com.pragma.home_service.category.infrastructure.exceptionhandler;
 
-import com.pragma.home_service.category.domain.exception.DescriptionLengthExceededException;
-import com.pragma.home_service.category.domain.exception.DuplicatedEntryException;
-import com.pragma.home_service.category.domain.exception.EmptyFieldException;
-import com.pragma.home_service.category.domain.exception.NameLengthExceededException;
+import com.pragma.home_service.category.domain.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -36,6 +33,11 @@ public class ControllerAdvisor {
     @ExceptionHandler(DescriptionLengthExceededException.class)
     public ResponseEntity<ExceptionResponse> handleDescriptionLengthExceededException(DescriptionLengthExceededException exception){
         ExceptionResponse response = new ExceptionResponse(ExceptionConstants.DESCRIPTION_LENGTH_EXCEEDED, HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        return ResponseEntity.badRequest().body(response);
+    }
+    @ExceptionHandler(NoDataFoundException.class)
+    public ResponseEntity<ExceptionResponse> handleNoDataFoundException(NoDataFoundException exception){
+        ExceptionResponse response = new ExceptionResponse(ExceptionConstants.NO_DATA_FOUND, HttpStatus.NOT_FOUND.toString(), LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         return ResponseEntity.badRequest().body(response);
     }
 }
