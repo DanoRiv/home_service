@@ -30,7 +30,7 @@ public class CategoryController {
     }
 
     @Operation(summary = "Get a paginated list of categories")
-    @ApiResponse(responseCode = "201", description = "Categories retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PaginatedResult.class)))
+    @ApiResponse(responseCode = "200", description = "Categories retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PaginatedResult.class)))
     @ApiResponse(responseCode = "404", description = "No data found for categories", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionResponse.class)))
     @GetMapping("/")
     public ResponseEntity<PaginatedResult<CategoryResponse>> getAllCateries(@RequestParam int page, @RequestParam int size, @RequestParam(required = false) String sort) {
