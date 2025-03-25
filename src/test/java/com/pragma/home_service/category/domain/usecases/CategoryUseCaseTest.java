@@ -106,5 +106,4 @@ class CategoryUseCaseTest {
         //act & assert
         assertThrows(NoDataFoundException.class, () -> categoryUseCase.getCategories(0, 2, "asc"));
     }
-
 }

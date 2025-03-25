@@ -4,6 +4,7 @@ import com.pragma.home_service.category.application.dto.request.SaveCategoryRequ
 import com.pragma.home_service.category.application.dto.response.CategoryResponse;
 import com.pragma.home_service.category.application.dto.response.SaveCategoryResponse;
 import com.pragma.home_service.category.application.services.CategoryService;
+
 import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 import com.pragma.home_service.category.infrastructure.exceptionhandler.ExceptionResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,6 +25,7 @@ public class CategoryController {
     @Operation(summary = "Create new category")
     @ApiResponse(responseCode = "201", description = "Category created successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SaveCategoryRequest.class)))
     @ApiResponse(responseCode = "400", description = "Couldn't create category", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionResponse.class)))
+
     @PostMapping("/")
     public ResponseEntity<SaveCategoryResponse> saveCategory(@RequestBody SaveCategoryRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.saveCategory(request));

@@ -1,6 +1,7 @@
 package com.pragma.home_service.category.domain.ports.in;
 
 import com.pragma.home_service.category.domain.model.CategoryModel;
+
 import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 
 public interface CategoryServicePort {

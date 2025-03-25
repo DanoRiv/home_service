@@ -6,8 +6,8 @@ import com.pragma.home_service.category.domain.model.CategoryModel;
 import com.pragma.home_service.category.domain.ports.in.CategoryServicePort;
 import com.pragma.home_service.category.domain.ports.out.CategoryPersistencePort;
 import com.pragma.home_service.category.domain.utils.constants.DomainConstants;
-import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 
+import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 
 public class CategoryUseCase implements CategoryServicePort {
 
@@ -36,5 +36,4 @@ public class CategoryUseCase implements CategoryServicePort {
     public PaginatedResult<CategoryModel> getCategories(int page, int size, String sort) {
         return categoryPersistencePort.getCategories(page, size, sort);
     }
-
 }
