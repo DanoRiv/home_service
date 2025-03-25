@@ -1,0 +1,13 @@
+server:
+  port: 8800
+
+spring:
+  application:
+    name: home_service
+  datasource:
+    url: jdbc:mysql://localhost/hogar360
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
