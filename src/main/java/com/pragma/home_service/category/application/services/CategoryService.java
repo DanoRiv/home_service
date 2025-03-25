@@ -4,9 +4,9 @@ import com.pragma.home_service.category.application.dto.request.SaveCategoryRequ
 import com.pragma.home_service.category.application.dto.response.CategoryResponse;
 import com.pragma.home_service.category.application.dto.response.SaveCategoryResponse;
 
-import java.util.List;
+import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 
 public interface CategoryService {
     SaveCategoryResponse saveCategory(SaveCategoryRequest request);
-    List<CategoryResponse> getCategories();
+    PaginatedResult<CategoryResponse> getCategories(int page, int size, String sort);
 }

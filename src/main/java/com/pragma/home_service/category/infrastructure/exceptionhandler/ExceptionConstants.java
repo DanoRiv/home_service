@@ -5,4 +5,5 @@ public class ExceptionConstants {
 
     public static final String NAME_LENGTH_EXCEEDED = "Name length cannot exceed 50 characters";
     public static final String DESCRIPTION_LENGTH_EXCEEDED = "Description length cannot exceed 90 characters";
+    public static final String NO_DATA_FOUND = "No data found";
 }

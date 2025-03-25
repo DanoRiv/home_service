@@ -7,8 +7,7 @@ import com.pragma.home_service.category.domain.ports.in.CategoryServicePort;
 import com.pragma.home_service.category.domain.ports.out.CategoryPersistencePort;
 import com.pragma.home_service.category.domain.utils.constants.DomainConstants;
 
-import java.util.List;
-
+import com.pragma.home_service.category.domain.utils.pagination.PaginatedResult;
 
 public class CategoryUseCase implements CategoryServicePort {
 
@@ -34,7 +33,7 @@ public class CategoryUseCase implements CategoryServicePort {
     }
 
     @Override
-    public List<CategoryModel> getCategories() {
-        return categoryPersistencePort.getCategories();
+    public PaginatedResult<CategoryModel> getCategories(int page, int size, String sort) {
+        return categoryPersistencePort.getCategories(page, size, sort);
     }
 }

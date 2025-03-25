@@ -10,6 +10,6 @@ public class DomainConstants {
     public static final String FIELD_DESCRIPTION_NULL_MESSAGE = "Field 'description' cannot be null or empty";
     public static final String DUPLICATED_CATEGORY_EXCEPTION_MESSAGE = "The category already exists";
 
-    public static final Integer MAX_NAME_LENGTH = 50;
-    public static final Integer MAX_DESCRIPTION_LENGTH = 90;
+    public static final int MAX_NAME_LENGTH = 50;
+    public static final int MAX_DESCRIPTION_LENGTH = 90;
 }
